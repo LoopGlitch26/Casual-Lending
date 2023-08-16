@@ -20,13 +20,13 @@ The dataset is divided into training and test sets for model evaluation. A Light
 
 ## Results and Analysis
 The project yields insights into the factors affecting loan approval decisions. The causal graph helps identify the potential causal relationships between different attributes. The trained model provides predictions on loan approval probabilities, allowing us to evaluate the impact of changing specific features on the outcome.
+![causal_graph](https://github.com/LoopGlitch26/Casual-Lending/assets/53336715/55a40437-367a-4c46-b5b2-0a24e0f8f7c1)
 
-![causal_graph](causal_graph.png)
 
 ## Business Implications
 This project has several business implications for the lending institution. The causal analysis can assist in making informed decisions about which factors to focus on when making loan approval decisions. The counterfactual samples provide a way to understand how loan approval outcomes might change under different circumstances, helping the institution make fair and equitable decisions.
 
 ## Conclusion
 The project successfully explores loan eligibility data, preprocesses and engineers features, and builds a predictive model. The causal analysis sheds light on the underlying relationships between variables, and the counterfactual analysis offers insights into how different attributes impact loan approval decisions. This project contributes valuable information for a lending institution to make informed and fair lending decisions while adhering to industry regulations and practices.
+![interpretation_graph](https://github.com/LoopGlitch26/Casual-Lending/assets/53336715/5d448237-fc46-4aa9-befd-a6c8df6d2009)
 
-![interpretation_graph](interpretation_graph.png)
