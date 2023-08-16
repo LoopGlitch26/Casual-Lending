@@ -1,32 +1,50 @@
-# Casual-Lending
+## Casual-Lending
 
-## Project Overview
-The Casual Lending project involves the exploration and modeling of a loan eligibility dataset to better understand the factors that influence loan approval. By utilizing data preprocessing, feature engineering, and causal inference techniques, this project aims to uncover the relationships between various applicant attributes and their impact on loan approval outcomes. The project involves the use of Python libraries such as NumPy, Pandas, LightGBM, and DoWhy for data analysis and modeling.
+**Project Overview:**
+- Exploration and modeling of a loan eligibility dataset to understand factors influencing loan approval.
+- Utilizes data preprocessing, feature engineering, and causal inference techniques.
+- Python libraries used: NumPy, Pandas, LightGBM, and DoWhy.
 
-## Dataset
-The project uses a dataset containing information about loan applicants, their financial details, and loan approval outcomes. The dataset includes features like gender, marital status, education level, credit history, property area, loan amount, loan amount term, total income, and more. The target variable is the loan approval status (0 for not approved and 1 for approved).
+**Dataset:**
+- Contains loan applicant details, financial data, and loan approval outcomes.
+- Features include gender, marital status, education level, credit history, property area, loan amount, etc.
+- Target variable: Loan approval status (0 for not approved, 1 for approved).
 
-## Data Preprocessing
-The dataset is initially loaded, and missing values in categorical variables are handled by replacing them with the mode value, while numerical variables are filled with the mean. Certain columns deemed irrelevant are dropped, and a new feature 'TotalIncome' is created by summing up 'ApplicantIncome' and 'CoapplicantIncome'. The 'TotalIncome', 'LoanAmount', and 'Loan_Amount_Term' columns are scaled using MinMaxScaler for uniformity.
+**Data Preprocessing:**
+- Handle missing categorical values by replacing with mode, numerical values with mean.
+- Drop irrelevant columns, create 'TotalIncome' by summing 'ApplicantIncome' and 'CoapplicantIncome'.
+- Scale 'TotalIncome', 'LoanAmount', and 'Loan_Amount_Term' using MinMaxScaler.
 
-## Feature Engineering
-An additional feature 'Appreciability' is introduced to capture the appreciation potential of the loan for each applicant based on their financial attributes. Another feature 'IncomeComb' is created to combine 'Education' and 'Self_Employed' features, indicating whether the applicant has a stable income source.
+**Feature Engineering:**
+- Introduce 'Appreciability' to capture loan appreciation potential based on financial attributes.
+- Create 'IncomeComb' to merge 'Education' and 'Self_Employed', indicating stable income source.
 
-## Causal Inference
-A causal graph is constructed to model the relationships between variables. The graph indicates the potential causal pathways among the variables. Notable causal relationships include 'Credit_History' affecting 'Loan_Status', 'Property_Area' influencing 'LoanAmount', and 'TotalIncome' impacting 'Loan_Status'. 
+**Causal Inference:**
+- Construct a causal graph to model variable relationships and potential causal pathways.
+- Highlight relationships like 'Credit_History' -> 'Loan_Status', 'Property_Area' -> 'LoanAmount', etc.
 
-## Model Development
-The dataset is divided into training and test sets for model evaluation. A LightGBM classifier is trained on the training data to predict 'Loan_Status'. To ensure fairness and avoid discrimination, the trained model is used to generate counterfactual samples for various applicant profiles. This allows us to observe the predicted outcomes if certain variables were different while keeping others constant.
-
-## Results and Analysis
-The project yields insights into the factors affecting loan approval decisions. The causal graph helps identify the potential causal relationships between different attributes. The trained model provides predictions on loan approval probabilities, allowing us to evaluate the impact of changing specific features on the outcome.
 ![causal_graph](https://github.com/LoopGlitch26/Casual-Lending/assets/53336715/55a40437-367a-4c46-b5b2-0a24e0f8f7c1)
 
 
-## Business Implications
-This project has several business implications for the lending institution. The causal analysis can assist in making informed decisions about which factors to focus on when making loan approval decisions. The counterfactual samples provide a way to understand how loan approval outcomes might change under different circumstances, helping the institution make fair and equitable decisions.
+**Model Development:**
+- Divide dataset into training and test sets.
+- Train LightGBM classifier on training data to predict 'Loan_Status'.
+- Generate counterfactual samples using the model to observe outcomes under varied attributes.
 
-## Conclusion
-The project successfully explores loan eligibility data, preprocesses and engineers features, and builds a predictive model. The causal analysis sheds light on the underlying relationships between variables, and the counterfactual analysis offers insights into how different attributes impact loan approval decisions. This project contributes valuable information for a lending institution to make informed and fair lending decisions while adhering to industry regulations and practices.
+**Results and Analysis:**
+- Gain insights into factors influencing loan approval.
+- Causal graph reveals potential causal links between attributes.
+- Trained model predicts loan approval probabilities, assess impact of changing features.
+
+**Business Implications:**
+- Assist lending institutions in informed loan approval decisions.
+- Counterfactual analysis helps understand how outcomes change under different scenarios.
+
 ![interpretation_graph](https://github.com/LoopGlitch26/Casual-Lending/assets/53336715/5d448237-fc46-4aa9-befd-a6c8df6d2009)
 
+
+**Conclusion:**
+- Successful exploration, preprocessing, and modeling of loan data.
+- Causal analysis uncovers attribute relationships.
+- Counterfactual insights aid in equitable lending decisions.
+- Valuable information for fair and informed lending practices.
